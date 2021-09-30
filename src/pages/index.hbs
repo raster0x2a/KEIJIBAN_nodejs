@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="[[icon image url]]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{seo.title}}</title>
+    
+    <link rel="canonical" href="{{seo.url}}">
+    <meta name="description" content="{{seo.description}}">
+    <meta property="og:title" content="{{seo.title}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{seo.url}}">
+    <meta property="og:description" content="{{seo.description}}">
+    <meta property="og:image" content="{{seo.image}}">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div id="top-bar">
+          <img id="logo" src="[[logo image url]]">
+          <h1 class="title">KEIJIBAN</h1>
+        </div>
+        
+        <div class="post-form">
+          <form class="post-message" method="post">
+              <label for="post">
+                <p>掲示板です。なんでも投稿してください。</p>
+                <input id="name" name="name" required="required" type="text" placeholder="名前" value="{{setName}}"><br>
+                <textarea id="message" name="message" required="required" type="text" cols="35" rows="8" placeholder="メッセージ"></textarea>
+              </label>
+            <button type="submit">投稿</button>
+          </form>
+        </div>
+        
+        {{#each posts}}
+          <p class="post">
+            <b>{{id}}: {{name}}</b> {{message}}
+          </p>
+        {{/each}}
+        
+      </div>
+    </div>
+    <footer class="footer">
+      2021 &copy; R* 
+    </footer>
+  </body>
+</html>
